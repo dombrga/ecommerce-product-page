@@ -1,0 +1,49 @@
+  .navbar-container {
+  padding: 1.3rem 1.3rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+
+  gap: 0 1rem;
+
+  button {
+    display: block;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+}
+
+.cart-container {
+  display: flex;
+  align-items: center;
+
+  gap: 0 1.1rem;
+
+  .avatar {
+    height: 30px;
+  }
+}
+
+@media (min-width: 800px) {
+  .navbar-py-1 {
+    padding: 0 1.3rem 0;
+  }
+  .border {
+    border-bottom: 1px solid hsl(220, 19%, 88%);
+  }
+  .navbar-container {
+    padding: 1.5rem 0 2rem;
+  }
+
+  .logo-div {
+    display: flex;
+    // align-items: center;
+    gap: 0 3rem;
+  }
+}

@@ -1,0 +1,40 @@
+.drawer-container {
+  background-color: #ffff;
+  width: 230px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  padding: 2rem 1.5rem;
+  
+  button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 3rem;
+  }
+}
+
+.ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  
+  li {
+    font-size: 1.15rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+  }
+
+  a {
+    color: #000000;
+    display: block;
+  }
+}
