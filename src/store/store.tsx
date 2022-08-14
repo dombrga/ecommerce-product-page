@@ -7,16 +7,23 @@ interface BearState {
 }
 
 
-const useStore = create<BearState>(set => {
+const useStore = create<BearState>()(set => {
   return {
     dialog: false,
     bears: 0,
     updateBears: () => set(state => ({bears: state.bears +1})),
     setDialog: () => set((state) => ({dialog: !state.dialog})),
 
+    // drawer
     isDrawerOpen: false,
     setIsDrawerOpen: () => set((state) => ({
       isDrawerOpen: !state.isDrawerOpen
+    })),
+
+    // cart
+    cart: [],
+    setCart: () => set(state => ({
+      cart: []
     }))
   }
 })

@@ -8,6 +8,7 @@ import avatar from '../../assets/image-avatar.png'
 import logo from '../../assets/logo.svg'
 import Links from './Links'
 import Drawer from './Drawer'
+import Cart from './Cart'
 
 const navLinks = ['Collections', 'Men', 'Women', 'About']
 
@@ -44,6 +45,7 @@ function Navbar() {
   return (
     <div className={styles['navbar-py-1']}>
       {isMobile && store.isDrawerOpen && <Drawer navLinks={navLinks} />}
+      <Cart />
       <div className={styles['border']}>
         <div className={styles['navbar-container']}>
             <div className={[styles['logo-container']].join(' ')}>
