@@ -68,7 +68,7 @@ function Navbar() {
 
   return (
     <div className={styles['navbar-py-1']}>
-      {isMobile && store.isDrawerOpen && <Drawer navLinks={navLinks} />}
+      {/* {isMobile && store.isDrawerOpen && <Drawer navLinks={navLinks} />} */}
       {/* {store.isCartOpen && <Cart width={cartWidth} />} */}
       {/* {store.isCartOpen && <Cart width={cartWidth} />} */}
       <Cart width={cartWidth} />
