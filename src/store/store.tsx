@@ -1,13 +1,23 @@
 import create from 'zustand'
 
-interface BearState {
-  dialog: boolean
-  setDialog: () => void
-  updateBears: () => void
+type BearState = {
+  dialog: boolean,
+  bears: number,
+  setDialog: () => void,
+  updateBears: () => void,
+
+  isDrawerOpen: boolean
+  setIsDrawerOpen: () => void
+
+  cart: number[]
+  isCartOpen: boolean
+  setIsCartOpen: (by?: boolean) => void
+  setCart: () => void
 }
 
 
 const useStore = create<BearState>()(set => {
+// const useStore = create(set => {
   return {
     dialog: false,
     bears: 0,
@@ -21,11 +31,16 @@ const useStore = create<BearState>()(set => {
     })),
 
     // cart
-    cart: [],
+    cart: [1],
+    isCartOpen: false,
+    setIsCartOpen: (by?: boolean) => set(state => (
+      {isCartOpen: by !== undefined ? by : !state.isCartOpen}
+    )),
     setCart: () => set(state => ({
       cart: []
     }))
   }
 })
+console.log('zustand', useStore)
 
 export default useStore

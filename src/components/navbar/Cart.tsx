@@ -3,12 +3,26 @@ import useStore from '../../store/store'
 
 import deleteIcon from '../../assets/icon-delete.svg'
 
-function Cart() {
-  const store = useStore(state => ({cart: state.cart, setCart: state.setCart}))
-  console.log(store)
+function Cart({ width }: { width: number }) {
+  const store = useStore(state => ({
+    cart: state.cart,
+    setCart: state.setCart,
+    isCartOpen: state.isCartOpen,
+    setIsCartOpen: state.setIsCartOpen
+  }))
+
+  const containerStyle = {
+    width: store.isCartOpen ? '350px' : 0,
+    // transition: '1s'
+  }
+  // console.log(store)
+
   return (
-    <section className={style.container}>
-      {store.cart.length > 0 ? 
+    <section
+      className={style.container}
+      style={containerStyle}
+    >
+      {store.cart.length > 0 ?
         <>
           <h1>Cart</h1>
           <div className={style.separator}></div>
@@ -17,7 +31,7 @@ function Cart() {
               <div>
                 {/* product goes here */}
               </div>
-              <img src={deleteIcon} alt="delete"/>
+              <img src={deleteIcon} alt="delete" />
             </div>
             <button type='button'>Checkout</button>
           </div>
@@ -25,7 +39,7 @@ function Cart() {
         :
         <p>Your cart is empty!</p>
       }
-      
+
     </section>
   )
 }

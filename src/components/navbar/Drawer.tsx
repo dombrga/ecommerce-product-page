@@ -6,7 +6,8 @@ import closeIcon from '../../assets/icon-close.svg'
 import { Ref, RefObject, useEffect, useRef } from 'react'
 
 type Drawer = {
-  navLinks: string[]
+  navLinks: string[],
+  // width: number
 }
 
 

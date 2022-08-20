@@ -1,21 +1,21 @@
+@use '../../base';
+
 .container {
   position: absolute;
-  border: 1px solid #000000;
+  // border: 1px solid #000000;
   border-radius: .3rem;
-  width: 350px;
-  height: 190px;
+  // width: 350px;
+  // height: 190px;
+  width: 0;
+  overflow: hidden;
   left: 0;
   right: 0;
   top: 6rem;
   margin: 0 auto;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // flex-direction: column;
-  // text-align: center;
+  transition: width .3s;
   
   h1 {
-    
+    font-size: 1rem;
     padding: 1rem;
   }
 
@@ -28,8 +28,19 @@
 
 .checkout-container {
   padding: 1rem 1rem 1.5rem;
+
+  button {
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+    letter-spacing: .1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: base.$primary-orange;
+    width: 100%;
+    padding: 1rem;
+  }
 }
 
 .separator {
-  border-top: 1px solid red;
+  border-top: 1px solid rgb(219, 212, 212);
 }
