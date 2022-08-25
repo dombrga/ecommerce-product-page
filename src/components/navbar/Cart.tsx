@@ -1,11 +1,13 @@
 import style from './Cart.module.scss'
 import useStore from '../../store/store'
+import image from '@/assets/image-product-1-thumbnail.jpg'
 
 import deleteIcon from '../../assets/icon-delete.svg'
+import CartData from './CartData'
 
 function Cart({ width }: { width: number }) {
   const store = useStore(state => ({
-    cart: state.cart,
+    cartProducts: state.cartProducts,
     setCart: state.setCart,
     isCartOpen: state.isCartOpen,
     setIsCartOpen: state.setIsCartOpen
@@ -22,17 +24,13 @@ function Cart({ width }: { width: number }) {
       className={style.container}
       style={containerStyle}
     >
-      {store.cart.length > 0 ?
+      {/* {store.isCartOpen ? */}
+      {store.cartProducts.length > 0 ?
         <>
           <h1>Cart</h1>
           <div className={style.separator}></div>
           <div className={style['checkout-container']}>
-            <div>
-              <div>
-                {/* product goes here */}
-              </div>
-              <img src={deleteIcon} alt="delete" />
-            </div>
+            <CartData />
             <button type='button'>Checkout</button>
           </div>
         </>
